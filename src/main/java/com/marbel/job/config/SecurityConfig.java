@@ -37,7 +37,8 @@ public class SecurityConfig {
                         "/admit-sitemap.xml",
                         "/blogs-sitemap.xml",
                         "/schemes-sitemap.xml"
-                ).permitAll()   // ✅ allow sitemaps
+                ).permitAll()
+				.requestMatchers("/actuator/health","/health").permitAll()
 				.requestMatchers("/api/notification/subscribe", "/api/notification/allsubscribers").permitAll()
 				.requestMatchers("/api/v1/comments/**").permitAll()
 				.requestMatchers("/api/v1/admin/login", "/api/v1/admin/signup").permitAll()
