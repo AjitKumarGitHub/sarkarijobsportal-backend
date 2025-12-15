@@ -85,7 +85,7 @@ public class PostController {
 	}
 
 	@GetMapping("/latest")
-	public List<Post> getLatestPosts(@RequestParam(required = false) String lang) {
+	public List<Post> getLatestPosts(@RequestParam(defaultValue = "en") String lang) {
 		return postService.getLatestPosts(lang);
 	}
 
